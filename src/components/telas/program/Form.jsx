@@ -9,7 +9,7 @@ function Form() {
     <div
       className="modal fade"
       id="modalEdicao"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
@@ -40,6 +40,7 @@ function Form() {
                   className="form-control"
                   id="txtId"
                   name="id"
+                  readOnly
                   value={objeto.id}
                   onChange={handleChange}
                 />

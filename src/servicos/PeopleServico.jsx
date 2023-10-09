@@ -12,12 +12,11 @@ export const getPessoasAPI = async () => {
 }
 
 export const getPessoaPorCodigoAPI = async id => {
-    console.log("Id do Get " + id);
     const response = await fetch(`${process.env.REACT_APP_ENDERECO_API}/people/${id}`,
     {
         method: "GET", 
         headers:{
-            "Content-Type" : 'applicattion/json'
+            "Content-Type" : 'application/json'
         }
     }); 
     
@@ -30,7 +29,7 @@ export const deletePessoaPorCodigoAPI = async id => {
     {
         method: "DELETE", 
         headers:{
-            "Content-Type" : 'applicattion/json'
+            "Content-Type" : 'application/json'
         }
     }); 
     
@@ -46,7 +45,7 @@ export const cadastraPessoaAPI = async (objeto,metodo) => {
     {
         method: metodo, 
         headers:{
-            "Content-Type" : 'applicattion/json'
+            "Content-Type" : 'application/json'
         },
         body : JSON.stringify(objeto)
     }); 

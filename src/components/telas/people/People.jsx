@@ -27,37 +27,36 @@ function People() {
     profession: "",
     login: "",
     password: "",
-    city: ""
+    city: 0
   });
 
-  const novoObjeto = async (id) => {
-    {
-      id === undefined ? (id = 1) : (id = id);
-    }
-    setEditar(false);
-    setAlerta({ status: "", message: "" });
-    setObjeto(await getPessoaPorCodigoAPI(id));
-  };
-
-  const editarObjeto = () => {
+  const novoObjeto = () => {
     setEditar(false);
     setAlerta({ status: "", message: "" });
     setObjeto({
-        id: 0,
-        name: "",
-        sex: "",
-        adress: "",
-        complement: "",
-        district: "",
-        zip_code: "",
-        telephone: "",
-        celular: "",
-        e_mail: "",
-        profession: "",
-        login: "",
-        password: "",
-        city: ""
-    });
+      id: 0,
+      name: "",
+      sex: "",
+      adress: "",
+      complement: "",
+      district: "",
+      zip_code: "",
+      telephone: "",
+      celular: "",
+      e_mail: "",
+      profession: "",
+      login: "",
+      password: "",
+      city: 0
+  });
+   
+  };
+
+  const editarObjeto =  async (id) => {
+    setEditar(false);
+    setAlerta({ status: "", message: "" });
+    setObjeto(await getPessoaPorCodigoAPI(id));
+   
   };
 
   const acaoCadastrar = async (e) => {

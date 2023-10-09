@@ -3,7 +3,7 @@ export const getProgramasAPI = async () => {
     {
         method: "GET", 
         headers:{
-            "Content-Type" : 'applicattion/json'
+            "Content-Type" : 'application/json'
         }
     }); 
 
@@ -17,7 +17,7 @@ export const getProgramsPorCodigoAPI = async id => {
     {
         method: "GET", 
         headers:{
-            "Content-Type" : 'applicattion/json'
+            "Content-Type" : 'application/json'
         }
     }); 
     
@@ -30,7 +30,7 @@ export const deleteProgramsPorCodigoAPI = async id => {
     {
         method: "DELETE", 
         headers:{
-            "Content-Type" : 'applicattion/json'
+            "Content-Type" : 'application/json'
         }
     }); 
     
@@ -42,15 +42,14 @@ export const cadastraProgramAPI = async (objeto,metodo) => {
     console.log(objeto);
     console.log(metodo);
     
-    const response = await fetch( `${process.env.REACT_APP_ENDERECO_API}/program`,
+    const response = await fetch(`${process.env.REACT_APP_ENDERECO_API}/program`,
     {
         method: metodo,
         headers:{
-            "Content-Type" : 'applicattion/json'
+            "Content-Type" : 'application/json'
         },
-        body :JSON.stringify(objeto)
+        body : JSON.stringify(objeto)
     }); 
-    console.log("Obejto JSon " + JSON.stringify(objeto))
        
     const data = await response.json();
     console.log(data)

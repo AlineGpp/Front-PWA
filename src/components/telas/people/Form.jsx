@@ -57,8 +57,8 @@ function Form() {
                   id="txtDescricao"
                   placeholder="Informe o nome"
                   required
-                  name="description"
-                  value={objeto.description}
+                  name="name"
+                  value={objeto.name}
                   onChange={handleChange}
                 />
               </div>
@@ -99,7 +99,7 @@ function Form() {
                     Cidade
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   className="form-control"
                   id="txtCidade"
                   required
@@ -175,7 +175,7 @@ function Form() {
                  Profissão
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   className="form-control"
                   id="txtProfissao"
                   required

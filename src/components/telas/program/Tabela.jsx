@@ -43,7 +43,7 @@ function Tabela() {
                       className="btn btn-info"
                       data-bs-toggle="modal"
                       data-bs-target="#modalEdicao"
-                      onClick={() => editarObjeto()}
+                      onClick={() => editarObjeto(obejto.id)}
                       title="Editar"
                     >
                       <i className="bi bi-pencil-square"></i>
