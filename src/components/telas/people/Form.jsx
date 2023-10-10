@@ -10,7 +10,7 @@ function Form() {
     <div
       className="modal fade"
       id="modalEdicao"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >

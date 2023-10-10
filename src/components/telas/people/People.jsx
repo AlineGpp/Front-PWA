@@ -24,7 +24,7 @@ function People() {
     telephone: "",
     celular: "",
     e_mail: "",
-    profession: "",
+    profession:0,
     login: "",
     password: "",
     city: 0
@@ -44,7 +44,7 @@ function People() {
       telephone: "",
       celular: "",
       e_mail: "",
-      profession: "",
+      profession: 0,
       login: "",
       password: "",
       city: 0
@@ -53,7 +53,7 @@ function People() {
   };
 
   const editarObjeto =  async (id) => {
-    setEditar(false);
+    setEditar(true);
     setAlerta({ status: "", message: "" });
     setObjeto(await getPessoaPorCodigoAPI(id));
    
@@ -66,6 +66,7 @@ function People() {
     try {
       let retornoAPI = await cadastraPessoaAPI(objeto, metodo);
       setAlerta({ status: retornoAPI.status, message: retornoAPI.message });
+      console.log("Objeto " + JSON.stringify(objeto))
       setObjeto(retornoAPI.objeto);
       if (!editar) {
         setEditar(true);

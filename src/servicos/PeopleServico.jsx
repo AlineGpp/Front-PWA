@@ -3,7 +3,7 @@ export const getPessoasAPI = async () => {
     {
         method: "GET", 
         headers:{
-            "Content-Type" : 'applicattion/json'
+            "Content-Type" : 'application/json'
         }
     }); 
 
@@ -51,5 +51,6 @@ export const cadastraPessoaAPI = async (objeto,metodo) => {
     }); 
     
     const data = await response.json();
+    console.log(data);
     return data;
 }

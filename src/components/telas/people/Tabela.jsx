@@ -21,7 +21,7 @@ function Tabela() {
         Novo
         <i className="bi bi-file-plus"></i>
       </button>
-      {listaObjetos.length === 0 && <h1>Nenhuma pessoa enccontrada</h1>}
+      {listaObjetos.length === 0 && <h1>Nenhuma pessoa encontrada</h1>}
       {listaObjetos.length > 0 && (
         <div className="table-responsive">
           <table className="table">
