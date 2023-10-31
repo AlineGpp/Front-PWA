@@ -32,7 +32,7 @@ function Tabela() {
                 </th>
                 <th scope="col">Código</th>
                 <th scope="col">Nome</th>
-                <th scope="col">Descrição</th>
+                <th scope="col">Endereço</th>
               </tr>
             </thead>
             <tbody>
@@ -59,7 +59,9 @@ function Tabela() {
                   </td>
                   <th scope="row">{obejto.id}</th>
                   <td>{obejto.description}</td>
-                  <td>{obejto.fulldescription}</td>
+                  <td>
+                    <a href={obejto.address}>{obejto.address}</a>
+                    </td>
                 </tr>
               ))}
             </tbody>

@@ -32,9 +32,7 @@ function Tabela() {
                 </th>
                 <th scope="col">Código</th>
                 <th scope="col">Nome</th>
-                <th scope="col">Endereço</th>
                 <th scope="col">Email</th>
-                <th scope="col">Telefone</th>
               </tr>
             </thead>
             <tbody>
@@ -45,7 +43,7 @@ function Tabela() {
                       className="btn btn-info"
                       data-bs-toggle="modal"
                       data-bs-target="#modalEdicao"
-                      onClick={() => editarObjeto()}
+                      onClick={() => editarObjeto(obejto.id)}
                       title="Editar"
                     >
                       <i className="bi bi-pencil-square"></i>
@@ -61,9 +59,7 @@ function Tabela() {
                   </td>
                   <th scope="row">{obejto.id}</th>
                   <td>{obejto.name}</td>
-                  <td>{obejto.address}</td>
                   <td>{obejto.e_mail}</td>
-                  <td>{obejto.telephone}</td>
                 </tr>
               ))}
             </tbody>

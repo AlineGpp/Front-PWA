@@ -35,7 +35,6 @@ function Form() {
                 <label htmlFor="txtId" className="form-label">
                   Codigo
                 </label>
-
                 <input
                   type="number"
                   className="form-control"
@@ -64,98 +63,6 @@ function Form() {
               </div>
 
               <div className="mb-3">
-                <label htmlFor="txtSexo" className="form-label">
-                  Sexo(F,M)
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="txtSexo"
-                  required
-                  name="sex"
-                  value={objeto.sex}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="txtEndereco" className="form-label">
-                  Endereco
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="txtEndereco"
-                  placeholder="Informe o seu endereco"
-                  required
-                  name="address"
-                  value={objeto.address}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="txtCidade" className="form-label">
-                    Cidade
-                </label>
-                <input
-                  type="number"
-                  className="form-control"
-                  id="txtCidade"
-                  required
-                  name="city"
-                  value={objeto.city}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="txtComplemento" className="form-label">
-                  Complemento
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="txtComplemento"
-                  required
-                  name="complement"
-                  value={objeto.complement}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="txtTelefone" className="form-label">
-                 Telefone
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="txtTelefone"
-                  required
-                  name="telephone"
-                  value={objeto.telephone}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="txtCelular" className="form-label">
-                Celular
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="txtCelular"
-                  required
-                  name="celular"
-                  value={objeto.celular}
-                  onChange={handleChange}
-                />
-              </div>
-
-
-              <div className="mb-3">
                 <label htmlFor="txtEmail" className="form-label">
                  Email
                 </label>
@@ -166,21 +73,6 @@ function Form() {
                   required
                   name="e_mail"
                   value={objeto.e_mail}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="txtProfissao" className="form-label">
-                 Profissão
-                </label>
-                <input
-                  type="number"
-                  className="form-control"
-                  id="txtProfissao"
-                  required
-                  name="profession"
-                  value={objeto.profession}
                   onChange={handleChange}
                 />
               </div>
@@ -206,7 +98,7 @@ function Form() {
                 Senha
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   className="form-control"
                   id="txtSenha"
                   required

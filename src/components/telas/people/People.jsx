@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
 import PeopleContext from "./PeopleContext";
-import {
-  cadastraPessoaAPI,
-  deletePessoaPorCodigoAPI,
-  getPessoaPorCodigoAPI,
-  getPessoasAPI
-} from "../../../servicos/PeopleServico";
+import {cadastraPessoaAPI,deletePessoaPorCodigoAPI,getPessoaPorCodigoAPI,getPessoasAPI} from "../../../servicos/PeopleServico";
 import Tabela from "./Tabela";
 import Form from "./Form";
 
@@ -16,18 +11,9 @@ function People() {
   const [objeto, setObjeto] = useState({
     id: 0,
     name: "",
-    sex: "",
-    adress: "",
-    complement: "",
-    district: "",
-    zip_code: "",
-    telephone: "",
-    celular: "",
     e_mail: "",
-    profession:0,
     login: "",
-    password: "",
-    city: 0
+    password: ""
   });
 
   const novoObjeto = () => {
@@ -36,18 +22,9 @@ function People() {
     setObjeto({
       id: 0,
       name: "",
-      sex: "",
-      adress: "",
-      complement: "",
-      district: "",
-      zip_code: "",
-      telephone: "",
-      celular: "",
       e_mail: "",
-      profession: 0,
       login: "",
-      password: "",
-      city: 0
+      password: ""
   });
    
   };
@@ -62,7 +39,6 @@ function People() {
   const acaoCadastrar = async (e) => {
     e.preventDefault();
     const metodo = editar ? "PUT" : "POST";
-
     try {
       let retornoAPI = await cadastraPessoaAPI(objeto, metodo);
       setAlerta({ status: retornoAPI.status, message: retornoAPI.message });

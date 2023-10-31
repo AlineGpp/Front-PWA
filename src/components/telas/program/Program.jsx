@@ -16,10 +16,7 @@ function Program() {
   const [objeto, setObjeto] = useState({
     id:0,
     description: "",
-    alert: "",
-    fulldescription: "",
-    address: "",
-    image: ""
+    address: ""
   });
 
   const novoObjeto = () => {
@@ -28,10 +25,7 @@ function Program() {
     setObjeto({
       id: 0,
       description: "",
-      alert: "",
-      fulldescription: "",
-      address: "",
-      image: ""
+      address: ""
     });
   };
 

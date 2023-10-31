@@ -65,43 +65,11 @@ function Form() {
 
 
               <div className="mb-3">
-                <label htmlFor="txtNome" className="form-label">
-                  Alert(S,N)
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="txtNome"
-                  placeholder="Informe o alert"
-                  required
-                  name="alert"
-                  value={objeto.alert}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="txtFulDescription" className="form-label">
-                 Descricao Completa
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="txtFullDescription"
-                  placeholder="Informe a Descrição Completa"
-                  required
-                  name="fulldescription"
-                  value={objeto.fulldescription}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="mb-3">
                 <label htmlFor="txtAddress" className="form-label">
                 Endereco do Sistema
                 </label>
                 <input
-                  type="text"
+                  type="link"
                   className="form-control"
                   id="txtEndereco"
                   placeholder="Informe o endereco do sistema"
@@ -112,22 +80,6 @@ function Form() {
                 />
               </div>
 
-              <div className="mb-3">
-                <label htmlFor="txtImage" className="form-label">
-                Nome da imagem
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="txtImage"
-                  placeholder="Informe o nome da imagem"
-                  required
-                  name="image"
-                  value={objeto.image}
-                  onChange={handleChange}
-                />
-                
-              </div>
 
             </div>
             <div className="modal-footer">
