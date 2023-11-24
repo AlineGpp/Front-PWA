@@ -1,9 +1,12 @@
+import { getToken } from "../security/Autentication";
+
 export const getProgramasAPI = async () => {
     const response = await fetch(`${process.env.REACT_APP_ENDERECO_API}/program`,
     {
         method: "GET", 
         headers:{
-            "Content-Type" : 'application/json'
+            "Content-Type" : 'application/json',
+            "authorization" : getToken()
         }
     }); 
 
@@ -17,7 +20,8 @@ export const getProgramsPorCodigoAPI = async id => {
     {
         method: "GET", 
         headers:{
-            "Content-Type" : 'application/json'
+            "Content-Type" : 'application/json',
+            "authorization" : getToken()
         }
     }); 
     
@@ -30,7 +34,8 @@ export const deleteProgramsPorCodigoAPI = async id => {
     {
         method: "DELETE", 
         headers:{
-            "Content-Type" : 'application/json'
+            "Content-Type" : 'application/json',
+            "authorization" : getToken()
         }
     }); 
     
@@ -46,7 +51,8 @@ export const cadastraProgramAPI = async (objeto,metodo) => {
     {
         method: metodo,
         headers:{
-            "Content-Type" : 'application/json'
+            "Content-Type" : 'application/json',
+            "authorization" : getToken()
         },
         body : JSON.stringify(objeto)
     }); 

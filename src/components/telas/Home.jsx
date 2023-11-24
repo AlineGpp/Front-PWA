@@ -1,10 +1,20 @@
+import React from "react";
+import software from '../../image/software.png';
 function Home() {
   return (
-    <>
-      <div style={{background: `https://www.google.com/url?sa=i&url=https%3A%2F%2Felofiscal.com%2Fsoftwares-contabeis%2F&psig=AOvVaw1Cnt3DVjTuL3TqxGJdzfkf&ust=1698800674867000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMDRv-iLn4IDFQAAAAAdAAAAABAF`}} >
-        <h1>cadSystems</h1>
-      </div>
-    </>
+  
+    <div style={{
+      backgroundImage: `url(${software})`,
+      backgroundSize: 'cover',  // Isso faz com que a imagem cubra todo o elemento
+      backgroundRepeat: 'no-repeat', // Evita repetição da imagem
+      backgroundPosition: 'center', // Alinha a imagem ao centro
+      width: '100vw', // Define a largura para ocupar 100% da largura da viewport
+      height: '90vh' // Define a altura para ocupar 100% da altura da viewport
+    }}>
+      <h1 style={{color:"white"}}>CadSystems</h1>
+    </div>
+    
+    
   );
 }
 export default Home;

@@ -1,14 +1,21 @@
 import { useContext } from "react";
 import ProgramContext from "./ProgramContext";
 import Alerta from "../../comuns/Alerta";
+import sistemas  from '../../../image/sitema.webp';
 
 function Tabela() {
   const { alerta, listaObjetos, remover, novoObjeto, editarObjeto } =
     useContext(ProgramContext);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Sistemas</h1>
+    <div style={{ padding: "20px",backgroundImage: `url(${sistemas})`,
+    backgroundSize: 'cover',  // Isso faz com que a imagem cubra todo o elemento
+    backgroundRepeat: 'no-repeat', // Evita repetição da imagem
+    backgroundPosition: 'center', // Alinha a imagem ao centro
+    width: '100vw', // Define a largura para ocupar 100% da largura da viewport
+    height: '90vh' // Define a altura para ocupar 100% da altura da viewport 
+     }}>
+      <h1 style={{color:"white"}}>Sistemas</h1>
       <Alerta alerta={alerta}></Alerta>
       <button
         type="button"
@@ -21,7 +28,7 @@ function Tabela() {
         Novo
         <i className="bi bi-file-plus"></i>
       </button>
-      {listaObjetos.length === 0 && <h1>Nenhum sistema enccontrado</h1>}
+      {listaObjetos.length === 0 && <h1 style={{color:"white"}}>Nenhum sistema encontrado</h1>}
       {listaObjetos.length > 0 && (
         <div className="table-responsive">
           <table className="table">

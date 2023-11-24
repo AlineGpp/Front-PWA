@@ -1,14 +1,23 @@
 import { useContext } from "react";
 import PeopleContext from "./PeopleContext";
 import Alerta from "../../comuns/Alerta";
+import pessoas from '../../../image/pessoas.jpeg';
 
 function Tabela() {
   const { alerta, listaObjetos, remover, novoObjeto, editarObjeto } =
     useContext(PeopleContext);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Pessoas</h1>
+    <div style={{ padding: "20px" ,
+    backgroundImage: `url(${pessoas})`,
+    backgroundSize: 'cover',  // Isso faz com que a imagem cubra todo o elemento
+    backgroundRepeat: 'no-repeat', // Evita repetição da imagem
+    backgroundPosition: 'center', // Alinha a imagem ao centro
+    width: '100vw', // Define a largura para ocupar 100% da largura da viewport
+    height: '90vh' // Define a altura para ocupar 100% da altura da viewport
+    
+    }}>
+      <h1 style={{color:"white"}}>Pessoas</h1>
       <Alerta alerta={alerta}></Alerta>
       <button
         type="button"
@@ -21,8 +30,8 @@ function Tabela() {
         Novo
         <i className="bi bi-file-plus"></i>
       </button>
-      {listaObjetos.length === 0 && <h1>Nenhuma pessoa encontrada</h1>}
-      {listaObjetos.length > 0 && (
+      {listaObjetos.length === null && <h1 style={{color:"white"}}>Nenhuma pessoa encontrada</h1>}
+      {listaObjetos.length != null && listaObjetos.length  > 0 && (
         <div className="table-responsive">
           <table className="table">
             <thead>
