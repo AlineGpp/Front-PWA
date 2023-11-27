@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import PeopleProgramContext from "./PeopleProgramContext";
 import { getPessoasAPI } from "../../../servicos/PeopleServico";
 import { getProgramasAPI } from "../../../servicos/ProgramServico";
-import {getPeopleProgramCodigoAPI,deletaPessoaEPrograma,cadastraPessoaseProgramasAPI,getPessoaseProgramasAPI} from "../../../servicos/PeopleProgramService";
+import {
+  deletaPessoaEPrograma,
+  cadastraPessoaseProgramasAPI,
+  getPessoaseProgramasAPI,
+} from "../../../servicos/PeopleProgramService";
 import Tabela from "./Tabela";
 import Form from "./Form";
 import Carregando from "../../comuns/Carregando";
@@ -15,46 +19,34 @@ function PeopleProgram() {
   const [listaObjetos, setListaObjetos] = useState([]);
   const [listaPessoas, setListaPessoas] = useState([]);
   const [listaProgramas, setListaProgramas] = useState([]);
-  const [editar, setEditar] = useState(false);
-  const [objeto, setObjeto] = useState({});
+  //const [editar, setEditar] = useState(false);
+  const [objeto, setObjeto] = useState({ people: 0, program: 0 });
   const [carregando, setCarregando] = useState(false);
 
   const novoObjeto = () => {
-    setEditar(false);
+    //setEditar(false);
     setAlerta({ status: "", message: "" });
     setObjeto({
-        id:0,
-        people_id:0,
-        program_id:0,
+      people: 0,
+      program: 0
     });
-  };
-
-  const editarObjeto = async (codigo) => {
-    try {
-      setEditar(true);
-      setAlerta({ status: "", message: "" });
-      setObjeto(await getPeopleProgramCodigoAPI(codigo));
-    } catch (err) {
-      window.location.reload();
-      navigate("/login", { replace: true });
-    }
   };
 
   const acaoCadastrar = async (e) => {
     e.preventDefault();
-    const metodo = editar ? "PUT" : "POST";
+    console.log(JSON.stringify(objeto));
     try {
-      let retornoAPI = await  cadastraPessoaseProgramasAPI(objeto, metodo);
+      let retornoAPI = await cadastraPessoaseProgramasAPI(objeto);
       setAlerta({ status: retornoAPI.status, message: retornoAPI.message });
       setObjeto(retornoAPI.objeto);
-      if (!editar) {
-        setEditar(true);
-      }
+      // if (!editar) {
+      //   setEditar(true);
+      // }
     } catch (err) {
       window.location.reload();
       navigate("/login", { replace: true });
     }
-    recuperaPessoasEProgramas();
+   recuperaPessoasEProgramas();
   };
 
   const handleChange = (e) => {
@@ -63,7 +55,7 @@ function PeopleProgram() {
     setObjeto({ ...objeto, [name]: value });
   };
 
-  const  recuperaPessoasEProgramas = async () => {
+  const recuperaPessoasEProgramas = async () => {
     try {
       setCarregando(true);
       setListaObjetos(await getPessoaseProgramasAPI());
@@ -80,12 +72,12 @@ function PeopleProgram() {
 
   const recuperaProgramas = async () => {
     setListaProgramas(await getProgramasAPI());
-  }
+  };
 
-  const remover = async (codigo) => {
+  const remover = async (idPeo, idPro) => {
     try {
       if (window.confirm("Deseja remover este objeto?")) {
-        let retornoAPI = await deletaPessoaEPrograma(codigo);
+        let retornoAPI = await deletaPessoaEPrograma(idPeo, idPro);
         setAlerta({ status: retornoAPI.status, message: retornoAPI.message });
         recuperaPessoas();
         recuperaProgramas();
@@ -97,7 +89,7 @@ function PeopleProgram() {
   };
 
   useEffect(() => {
-   recuperaPessoasEProgramas();
+    recuperaPessoasEProgramas();
     recuperaPessoas();
     recuperaProgramas();
   }, []);
@@ -109,13 +101,11 @@ function PeopleProgram() {
         listaObjetos,
         remover,
         objeto,
-        editar,
         acaoCadastrar,
         handleChange,
         novoObjeto,
-        editarObjeto,
         listaPessoas,
-        listaProgramas
+        listaProgramas,
       }}
     >
       <Carregando carregando={carregando}>

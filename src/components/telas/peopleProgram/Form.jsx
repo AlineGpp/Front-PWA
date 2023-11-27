@@ -67,7 +67,7 @@ function Form() {
             <div className="modal-body">
               <Alerta alerta={alerta} />
 
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <label htmlFor="txtCodigo" className="form-label">
                   Código {objeto.id}
                 </label>
@@ -76,37 +76,34 @@ function Form() {
                   className="form-control"
                   id="txtCodigo"
                   readOnly
-                  name="codigo"
+                  name="id"
                   value={objeto.id}
                   onChange={handleChange}
                 />
-              </div>
+              </div> */}
+
               <div className="mb-3">
                                 <label htmlFor="selectPessoa"
                                     className="form-label">Pessoa</label>
                                 <select className="form-select"
                                     id="selectPessoa"
-                                    required name="people_id"
-                                    value={objeto.people_id}
+                                    required name="people"
+                                    value={objeto.people}
                                     onChange={handleChange} >
-                                    <option disabled={true} value="">
-                                        Selecione a pessoa
+                                    <option value="">
+                                        Selecione a pessoa 
                                     </option>
-                                   
                                     {
-                                        listaPessoas.map((cat) => (
-                                            <option key={cat.id}
-                                                value={cat.id} >
-                                                    
-                                                {cat.name}
+                                        listaPessoas.map((peo) => (
+                                            <option key={peo.id}
+                                                value={peo.id} > 
+                                                {peo.name} {peo.id}
                                             </option>
                                        ))
                                     }
-                                  
-                                   
                                 </select>
                                 <div className="valid-feedback">
-                                   Pesso  OK
+                                   Pessoa  OK
                                 </div>
                                 <div className="invalid-feedback">
                                     Selecione a Pessoa
@@ -121,11 +118,11 @@ function Form() {
                   className="form-select"
                   id="selectPrograma"
                   required
-                  name="program_id"
-                  value={objeto.program_id}
+                  name="program"
+                  value={objeto.program}
                   onChange={handleChange}
                 >
-                  <option disabled={true} value="">
+                  <option value="">
                     Selecione o programa
                   </option>
                   {listaProgramas.map((program) => (

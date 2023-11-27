@@ -14,13 +14,12 @@ export const getPessoaseProgramasAPI = async () => {
     return data;
 }
 
-export const cadastraPessoaseProgramasAPI = async (objeto,metodo) => {
+export const cadastraPessoaseProgramasAPI = async (objeto) => {
     console.log(objeto);
-    console.log(metodo);
 
     const response = await fetch(`${process.env.REACT_APP_ENDERECO_API}/people_program`,
     {
-       method: metodo,
+       method: "POST",
         headers:{
             "Content-Type" : 'application/json',
             "authorization" : getToken()
@@ -33,8 +32,8 @@ export const cadastraPessoaseProgramasAPI = async (objeto,metodo) => {
    return data;
 }
 
-export const getPeopleProgramCodigoAPI = async (codigo) => {
-    const response = await fetch(`${process.env.REACT_APP_ENDERECO_API}/people_program/${codigo}`,
+export const getPeopleProgramCodigoAPI = async (idPeo,idPro) => {
+    const response = await fetch(`${process.env.REACT_APP_ENDERECO_API}/people_program/${idPeo}/${idPro}`,
     {
         method: "GET", 
         headers:{
@@ -48,8 +47,8 @@ export const getPeopleProgramCodigoAPI = async (codigo) => {
 }
 
 
-export const deletaPessoaEPrograma = async (codigo) => {
-    const response = await fetch(`${process.env.REACT_APP_ENDERECO_API}/people_program/${codigo}`,
+export const deletaPessoaEPrograma = async (idPeo,idPro) => {
+    const response = await fetch(`${process.env.REACT_APP_ENDERECO_API}/people_program/${idPeo}/${idPro}`,
     {
         method : "DELETE",
         headers : {
